@@ -13,6 +13,7 @@ jobs:
       - uses: overtrue/phplint@master
         with:
           path: .
+          args: --no-configuration
     
   phpstan:
     name: PHPStan
