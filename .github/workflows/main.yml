@@ -1,11 +1,9 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 on: [push, pull_request]
 
 jobs:
-  
-  linter:
+ 
+  php_linter:
     name: PHP Lint
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +21,7 @@ jobs:
     - name: PHPStan
       uses: docker://oskarstark/phpstan-ga
       with:
-        args: analyse ./*
+        args: analyse ./*.php ./inc/*.php
 
   phpinsights:
     name: PHP-Insights
@@ -32,3 +30,5 @@ jobs:
     - uses: actions/checkout@master
     - name: PHP-Insights
       uses: docker://tienvx/phpinsights-action
+      with:
+        args: analyse ./*.php ./inc/*.php
