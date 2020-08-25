@@ -4,7 +4,6 @@ on: pull_request
 jobs:
  
   php_linter:
-    name: PHP Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -12,13 +11,21 @@ jobs:
         with:
           path: ./
           args: --no-configuration
+   
+  php_cs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: PHP Code Style (phpcs)
+        uses: chindit/actions-phpcs@master
+        with:
+          dir: ./
     
-  phpstan:
-    name: PHPStan
+  php_stan:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: PHPStan
+    - name: PHP Stan
       uses: docker://oskarstark/phpstan-ga
       with:
         args: analyse ./*.php* ./inc/*.php
