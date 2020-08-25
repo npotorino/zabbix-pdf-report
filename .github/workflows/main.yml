@@ -31,4 +31,4 @@ jobs:
     - name: PHP-Insights
       uses: docker://tienvx/phpinsights-action
       with:
-        args: analyse ./*.php ./inc/*.php
+        args: analyse .
