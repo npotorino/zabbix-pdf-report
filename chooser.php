@@ -22,7 +22,7 @@ include("config.inc.php");
 
 if ( $user_login == 1 ) {
 session_start();
-//print_r($_SESSION);
+//print_r($_SESSION;);
 $z_user=$_SESSION['username'];
 $z_pass=$_SESSION['password'];
 
