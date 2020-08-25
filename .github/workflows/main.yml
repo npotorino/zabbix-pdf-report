@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: PHP Lint
-        uses: michaelw90/PHP-Lint@2.1.0
+        uses: overtrue/phplint@master
+        with:
+          path: .
     
   phpstan:
     name: PHPStan
@@ -20,7 +22,7 @@ jobs:
     - name: PHPStan
       uses: docker://oskarstark/phpstan-ga
       with:
-        args: analyse src/
+        args: analyse ./
 
   phpinsights:
     name: PHP-Insights
