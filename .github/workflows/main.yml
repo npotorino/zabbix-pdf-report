@@ -19,7 +19,7 @@ jobs:
       - name: PHP Code Style (phpcs)
         uses: chekalsky/phpcs-action@v1
         with:
-          args: --standard=PHPCompatibility --encoding=utf-8 --extensions=php,dist .
+          args: --standard=PHPCompatibility --encoding=utf-8 --extensions=php,dist "$GITHUB_WORKSPACE"
 
   php_stan:
     runs-on: ubuntu-latest
