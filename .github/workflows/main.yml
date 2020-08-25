@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: PHP Code Style (phpcs)
-        uses: chindit/actions-phpcs@master
+        uses: chekalsky/phpcs-action@v1
         with:
           dir: ./
     
