@@ -11,13 +11,6 @@ jobs:
         with:
           path: ./
           args: --no-configuration
-   
-  php_cs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: PHP Code Style (phpcs)
-        uses: chekalsky/phpcs-action@v1
 
   php_stan:
     runs-on: ubuntu-latest
