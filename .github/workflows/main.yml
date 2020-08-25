@@ -10,7 +10,8 @@ jobs:
       - uses: actions/checkout@master
       - uses: overtrue/phplint@master
         with:
-          path: .
+          path: ./
+          args: --no-configuration
     
   phpstan:
     name: PHPStan
