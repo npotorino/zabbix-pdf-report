@@ -22,12 +22,12 @@ include("config.inc.php");
 
 if ( $user_login == 1 ) {
 session_start();
-//print_r($_SESSION;);
+//print_r($_SESSION);
 $z_user=$_SESSION['username'];
 $z_pass=$_SESSION['password'];
 
 if ( $z_user == "" ) {
-  header("Location: index.php");
+  header("Location: index.php";);
 }
 
 $z_login_data	= "name=" .$z_user ."&password=" .$z_pass ."&autologin=1&enter=Sign+in";
