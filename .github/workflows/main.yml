@@ -1,0 +1,22 @@
+name: CI
+on: pull_request
+
+jobs:
+ 
+  php_linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: overtrue/phplint@master
+        with:
+          path: ./
+          args: --no-configuration
+
+  php_stan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: PHP Stan
+      uses: docker://oskarstark/phpstan-ga
+      with:
+        args: analyse ./*.php* ./inc/*.php
